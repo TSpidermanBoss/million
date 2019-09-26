@@ -7,7 +7,7 @@ d = -1001378725482
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client, message):
  f = False
- words = [" id","स",'dekho',"TRUST",'fix','😱','😳','👆','👇','pass','chase','link','loss','audio','open','paid','contact','baazigar','market','load','whatsapp','book','bhai',"🐴",'😂','member','only','chut",'lund','bhosdi','lavde','chutiya','☝️','bc','❓','kya','line',"https://",'🤔','LUND',"WICKET LU","?","loda","telegram","chor","join"]
+ words = [" id","स",'dekho',"TRUST",'fix','😱','😳','👆','👇','pass','chase','link','loss','audio','open','paid','contact','baazigar','market','load','whatsapp','book','bhai',"🐴",'😂','member','only','chut','lund','lavde','chutiya','☝️','bc','❓','kya','line',"https://",'🤔','LUND',"WICKET LU","?","loda","telegram","chor","join"]
  for word in words:
   if word.casefold() in message.text.casefold():
    f = True
