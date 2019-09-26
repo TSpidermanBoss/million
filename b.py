@@ -1,8 +1,8 @@
 from pyrogram import Client, Filters,Emoji
 from pyrogram.errors import FloodWait
 import time
-app = Client("i", 814511,"44462f0f278503255d5cc30941b617a9")
-s = -1001262096355
+app = Client("s",771202,"28eed966b0cd4238a4f4f8f0ab4c9c72")
+s = -1001153640657
 d = -1001378725482
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client, message):
@@ -12,7 +12,7 @@ def forward(client, message):
   if word.casefold() in message.text.casefold():
    f = True
  if not f:
-  mes = client.send_message(d,message.text.replace("TRINBAGO","𝕋ℝ𝕀ℕ𝔹𝔸𝔾𝕆").replace("🖲","🧚‍♂️⛳️").replace("⛳️","",1).replace("🇩🇪","🇮🇩").replace("📟","🥁"))
+  mes = client.send_message(d,message.text.replace("🖲","🙇🏼‍♂").replace("🇦🇲","🇮🇶").replace("📟","🎳").replace("🇩🇪","🇮🇶"))
   files = open("sure.txt" , "a")
   files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
   files.close()  
@@ -26,7 +26,7 @@ def forward(client, message):
   id = str(message.message_id)
   if id in x:
    try:
-    client.edit_message_text(d,int(x[x.index(id)+1]),message.text.replace("TRINBAGO","𝕋ℝ𝕀ℕ𝔹𝔸𝔾𝕆").replace("🖲","🧚‍♂️⛳️").replace("⛳️","",1).replace("🇩🇪","🇮🇩").replace("📟","🥁"))
+    client.edit_message_text(d,int(x[x.index(id)+1]),message.text.replace("🖲","🙇🏼‍♂").replace("🇦🇲","🇮🇶").replace("📟","🎳").replace("🇩🇪","🇮🇶"))
    except FloodWait as e:
     time.sleep(e.x)
 @app.on_deleted_messages(Filters.chat(s))
