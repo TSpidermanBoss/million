@@ -11,7 +11,7 @@ async def main():
   f = False
   words = ["kab","mani"," id","स",'dekho',"TRUST",'fix','😱','😳','👆','👇','match','pass','chase','defend','Surendra','karva','link','loss','audio','varna','open','paid','contact','baazigar','market','load','whatsapp','book','teen','diya','bhai',"🐴",'🥺','🖕','member','only','chut','lund','gand','ma ','maa ','bhosdi','bahan','loude','lode','lavde','chutiya','☝️','mkc','bc','madarchod','bahanchod','gandu','❓','kya','line',"https://",'bullet','🤔','LUND'," LU","?","loda","lode","lodu","telegram","chor","join"]
   for word in words:
-   if word.casefold() in message.text.casefold():
+   if word.casefold() in e.message.casefold():
     f = True
   if not f:
    z = await e.client.send_message(-1001315425757, e.message)
