@@ -4,7 +4,7 @@ from telethon import TelegramClient, events
 import config
 logging.basicConfig(level=logging.INFO)
 async def main():
- client = TelegramClientClient("m",488556,"c722b7aadbf8b72109b2f96f30974c6d")
+ client = TelegramClient("m",488556,"c722b7aadbf8b72109b2f96f30974c6d")
  msg_ids = {}
  @client.on(events.NewMessage(-1001203491308))
  async def from_fwd(e):
