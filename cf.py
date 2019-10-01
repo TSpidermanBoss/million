@@ -8,8 +8,14 @@ async def main():
  msg_ids = {}
  @client.on(events.NewMessage(-1001203491308))
  async def from_fwd(e):
-  z = await e.client.send_message(-1001315425757, e.message)
-  msg_ids[e.id] = z
+  f = False
+  words = ["kab","mani"," id","स",'dekho',"TRUST",'fix','😱','😳','👆','👇','match','pass','chase','defend','Surendra','karva','link','loss','audio','varna','open','paid','contact','baazigar','market','load','whatsapp','book','teen','diya','bhai',"🐴",'🥺','🖕','member','only','chut','lund','gand','ma ','maa ','bhosdi','bahan','loude','lode','lavde','chutiya','☝️','mkc','bc','madarchod','bahanchod','gandu','❓','kya','line',"https://",'bullet','🤔','LUND'," LU","?","loda","lode","lodu","telegram","chor","join"]
+  for word in words:
+   if word.casefold() in message.text.casefold():
+    f = True
+  if not f:
+   z = await e.client.send_message(-1001315425757, e.message)
+   msg_ids[e.id] = z
  @client.on(events.MessageEdited(-1001203491308))
  async def fwd_edit(e):
   if e.id not in msg_ids:
