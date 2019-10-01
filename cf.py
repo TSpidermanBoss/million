@@ -9,7 +9,7 @@ async def main():
  @client.on(events.NewMessage(-1001203491308))
  async def from_fwd(e):
   f = False
-  words = [" id","स",'dekho',"TRUST",'fix','😱','😳','👆','👇','pass','chase','link','loss','audio','open','paid','contact','baazigar','market','load','whatsapp','book','bhai',"🐴",'🥺','member','only','chut",'lund','gand','bhosdi','lavde','chutiya','☝️','bc','madarchod','gandu','❓','kya','line',"https://",'🤔','LUND',"WICKET LU","?","loda","telegram","chor","join"]
+  words = [' id','स','dekho','TRUST','fix','😱','😳','👆','👇','pass','chase','link','suno','loss','audio','open','paid','contact','baazigar','market','load','whatsapp','book','bhai','🐴','🥺','member','only','chut','lund','tennis','teen','lavde','chutiya','☝️','bc','❓','kya','line','https://','😂','🤔','LUND','WICKET LU','?','loda','telegram','chor','join',"kama","lakh","report","kitna"]
   for word in words:
    if word.casefold() in e.message.text.casefold():
     f = True
