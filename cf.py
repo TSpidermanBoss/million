@@ -5,7 +5,7 @@ logging.basicConfig(level=logging.INFO)
 async def main():
  client = TelegramClient("i", 814511,"44462f0f278503255d5cc30941b617a9")
  msg_ids = {}
- @client.on(events.NewMessage(-1001262096355))
+ @client.on(events.NewMessage(-1001378725482))
  async def from_fwd(e):
   f = False
   words = [' id','स','dekho','TRUST','fix','😱','😳','👆','👇','pass','chase','link','suno','loss','audio','open','paid','contact','baazigar','market','load','whatsapp','book','bhai','🐴','🥺','member','only','chut','lund','tennis','teen','lavde','chutiya','☝️','bc','❓','kya','line','https://','😂','🤔','LUND','WICKET LU','?','loda','telegram','chor','join',"kama","lakh","report","kitna"]
@@ -15,7 +15,7 @@ async def main():
   if not f:
    z = await e.client.send_message(-1001499814617,e.message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶"))
    msg_ids[e.id] = z
- @client.on(events.MessageEdited(-1001262096355))
+ @client.on(events.MessageEdited(-1001378725482))
  async def fwd_edit(e):
   if e.id not in msg_ids:
    return
