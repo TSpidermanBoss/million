@@ -7,7 +7,7 @@ async def main():
  msg_ids = {}
  @client.on(events.NewMessage(-1001492008965))
  async def from_fwd(e):
-  z = await e.client.send_message(-1001129066774,e.message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶"))
+  z = await e.client.send_message(-1001330100294,e.message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶"))
   msg_ids[e.id] = z
  @client.on(events.MessageEdited(-1001492008965))
  async def fwd_edit(e):
