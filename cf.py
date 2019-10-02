@@ -1,7 +1,6 @@
 import logging
 import asyncio
 from telethon import TelegramClient, events
-import config
 logging.basicConfig(level=logging.INFO)
 async def main():
  client = TelegramClient("i", 814511,"44462f0f278503255d5cc30941b617a9")
