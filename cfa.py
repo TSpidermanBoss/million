@@ -7,13 +7,13 @@ async def main():
  msg_ids = {}
  @client.on(events.NewMessage(-1001492008965))
  async def from_fwd(e):
-  z = await e.client.send_message(-1001330100294,e.message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶"))
+  z = await e.client.send_message(-1001330100294,e.message.text)
   msg_ids[e.id] = z
  @client.on(events.MessageEdited(-1001492008965))
  async def fwd_edit(e):
   if e.id not in msg_ids:
    return
-  await msg_ids[e.id].edit(e.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶"), file=e.media)
+  await msg_ids[e.id].edit(e.text,file=e.media)
  await client.start()
  await client.run_until_disconnected()
 loop = asyncio.get_event_loop()
