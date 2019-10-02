@@ -20,12 +20,6 @@ async def main():
   if e.id not in msg_ids:
    return
   await msg_ids[e.id].edit(e.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶"), file=e.media)
- @client.on(events.MessageDeleted(-1001203491308))
- async def fwd_delete(e):
-  if e.id not in msg_ids:
-   return
-  await msg_ids[e.id].delete(file=e.media)
-
  await client.start()
  await client.run_until_disconnected()
 loop = asyncio.get_event_loop()
