@@ -13,7 +13,7 @@ async def main():
    if word.casefold() in e.message.text.casefold():
     f = True
   if not f:
-   z = await e.client.send_message(-1001315425757,e.message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶"))
+   z = await e.client.send_message(-1001499814617,e.message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶"))
    msg_ids[e.id] = z
  @client.on(events.MessageEdited(-1001262096355))
  async def fwd_edit(e):
