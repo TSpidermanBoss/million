@@ -3,7 +3,7 @@ import asyncio
 from telethon import TelegramClient, events
 logging.basicConfig(level=logging.INFO)
 async def main():
- client = TelegramClient("i", 814511,"44462f0f278503255d5cc30941b617a9")
+ client = TelegramClient("sn",771202,"28eed966b0cd4238a4f4f8f0ab4c9c72")
  msg_ids = {}
  @client.on(events.NewMessage(-1001262096355))
  async def from_fwd(e):
