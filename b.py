@@ -7,11 +7,11 @@ d = -1001378725482
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client, message):
  f = False
- words = [' id','स','dekho','TRUST','fix','😱','😳','👆','👇','pass','chase','link','suno','loss','audio','open','paid','contact','baazigar','market','load','whatsapp','book','bhai','🐴','🥺','member','only','chut','tennis','teen','lavde','chutiya','☝️','bc','❓','kya','line','https://','😂','🤔','LUND','WICKET LU','?','loda','telegram','chor','join',"kama","lakh","report","kitna"]
+ words = ['dekho','TRUST','join','fix','😱','😳','👆','👇','☝️','https://','😂','🤔','pass','chase','link','suno','member','❓','loss','audio','open',"report",'paid','contact','baazigar','market','load','whatsapp','book','bhai','🐴','only','chut','tennis','teen','lavde','chutiya','bc','kya','line','LUND','WICKET LU','?','loda','telegram','chor',"kama","lakh",' id','स',"kitna"]
  for word in words:
   if word.casefold() in message.text.casefold():
    return
- mes = client.send_message(d,message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳"))
+ mes = client.send_message(d,message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳")) 
  files = open("sure.txt" , "a")
  files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
  files.close()  
