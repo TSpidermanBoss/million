@@ -1,9 +1,9 @@
 from pyrogram import Client, Filters,Emoji
 from pyrogram.errors import FloodWait
 import time
-app = Client("s",965018,"6cd1a0cfc1a3e76076a8331c4319e97c")
-s = -1001262096355
-d = -1001378725482
+app = Client(session_name=input("Enter session name : ") ,api_id=814511,api_hash="44462f0f278503255d5cc30941b617a9",bot_token = input("Enter bot token: "))                                   
+s = -1001203491308
+d = -1001315425757
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client, message):
  f = False
