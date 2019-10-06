@@ -11,7 +11,7 @@ def forward(client, message):
  for word in words:
   if word.casefold() in message.text.casefold():
    return
- mes = client.send_message(d,message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳")) 
+ mes = client.send_message(d,message.text.markdown) 
  files = open("sure.txt" , "a")
  files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
  files.close()  
@@ -25,7 +25,7 @@ def forward(client, message):
   id = str(message.message_id)
   if id in x:
    try:
-    client.edit_message_text(d,int(x[x.index(id)+1]),message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳"))
+    client.edit_message_text(d,int(x[x.index(id)+1]),message.text.markdown)
    except FloodWait as e:
     time.sleep(e.x)
 @app.on_deleted_messages(Filters.chat(s))
