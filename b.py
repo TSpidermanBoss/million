@@ -10,11 +10,12 @@ def forward(client, message):
  words = ['dekho','TRUST','join','fix','😱','😳','👆','👇','☝️','https://','😂','🤔','pass','chase','link','suno','member','❓','loss','audio','open',"report",'paid','contact','baazigar','market','load','whatsapp','book','bhai','🐴','only','chut','tennis','teen','lavde','chutiya','bc','kya','line','LUND','WICKET LU','?','loda','telegram','chor',"kama","lakh",' id','स',"kitna"]
  for word in words:
   if word.casefold() in message.text.casefold():
-   return
- mes = client.send_message(d,message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳")) 
- files = open("sure.txt" , "a")
- files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
- files.close()  
+   f = True
+ if not f:
+  mes = client.send_message(d,message.text.replace("🖲","🇨🇭").replace("TRINBAGO","𝕋ℝ𝕀ℕ𝔹𝔸𝔾𝕆").replace("📟","📮").replace("WD","WIDE")) 
+  files = open("sure.txt" , "a")
+  files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
+  files.close()  
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
 def forward(client, message):
  file = open("sure.txt" , "r")
@@ -25,7 +26,7 @@ def forward(client, message):
   id = str(message.message_id)
   if id in x:
    try:
-    client.edit_message_text(d,int(x[x.index(id)+1]),message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳"))
+    client.edit_message_text(d,int(x[x.index(id)+1]),message.text.replace("🖲","🇨🇭").replace("TRINBAGO","𝕋ℝ𝕀ℕ𝔹𝔸𝔾𝕆").replace("📟","📮").replace("WD","WIDE"))
    except FloodWait as e:
     time.sleep(e.x)
 @app.on_deleted_messages(Filters.chat(s))
