@@ -1,8 +1,8 @@
 from pyrogram import Client, Filters,Emoji
 from pyrogram.errors import FloodWait
 import time
-app = Client("nnn",488556,"c722b7aadbf8b72109b2f96f30974c6d")
-s = -1001262096355
+app = Client("baaz",869912,"a7b049e08df35464047d57e5134327e5")
+s = -1001146486274
 d = -1001378725482
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client,Message):
@@ -12,10 +12,13 @@ def forward(client,Message):
   if word.casefold() in Message.text.casefold():
    f = True
  if not f:
-  mes = client.send_message(d, Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
+  if "🎾" in message.text:
+   mes = client.send_message(d,' '.join(message.text..markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶").split("🎾")[:-1]) + "🎾")
+  else:
+   mes = client.send_message(d, Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
   files = open("sure.txt" , "a")
-  files.write(" " + str(Message.message_id) +  " " + str(mes.message_id))
-  files.close()  
+  files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
+  files.close()
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
 def forward(client,Message):
  file = open("sure.txt" , "r")
