@@ -5,27 +5,31 @@ app = Client(session_name="x",api_id=814511,api_hash="44462f0f278503255d5cc30941
 d = -1001315425757
 s = -1001203491308
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
-def forward(client, Message):
+def forward(client,Message):
  f = False
  words = ['dekho','TRUST','join','fix','😱','😳','👆','👇','☝️','https://','😂','🤔','pass','chase','link','suno','member','❓','loss','audio','open',"report",'paid','contact','baazigar','market','load','whatsapp','book','bhai','🐴','only','chut','tennis','teen','lavde','chutiya','bc','kya','line','LUND','WICKET LU','?','loda','telegram','chor',"kama","lakh",' id','स',"kitna"]
  for word in words:
   if word.casefold() in Message.text.casefold():
-   return
- mes = client.send_message(d,Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
- files = open("sure.txt" , "a")
- files.write(" " + str(Message.message_id) +  " " + str(mes.message_id))
- files.close()  
+   f = True
+ if not f:
+  if "🎾" in message.text:
+   mes = client.send_message(d,' '.join(message.text..markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶").split("🎾")[:-1]) + "🎾")
+  else:
+   mes = client.send_message(d, Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
+  files = open("sure.txt" , "a")
+  files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
+  files.close()
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
-def forward(client, message):
+def forward(client,Message):
  file = open("sure.txt" , "r")
  lines = file.readlines()
  file.close()
  for line in lines:
   x = line.split()
-  id = str(message.message_id)
+  id = str(Message.message_id)
   if id in x:
    try:
-    client.edit_message_text(d,int(x[x.index(id)+1]),message.text.markdown)
+    client.edit_message_text(d,int(x[x.index(id)+1]),Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶"))
    except FloodWait as e:
     time.sleep(e.x)
 @app.on_deleted_messages(Filters.chat(s))
