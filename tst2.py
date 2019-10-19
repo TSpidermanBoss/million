@@ -1,19 +1,19 @@
 from pyrogram import Client, Filters,Emoji
 from pyrogram.errors import FloodWait
 import time
-app = Client(session_name="x",api_id=814511,api_hash="44462f0f278503255d5cc30941b617a9",bot_token ="839678284:AAEb1D-EroMEA-VUuoSxp2CPYNd53hdPCh8")                                   
+app = Client(session_name="x",api_id=814511,api_hash="44462f0f278503255d5cc30941b617a9",bot_token ="765108996:AAGYA2lsT6yw1q5SEx1PXesPWYdwb8RBivc")
+d = -1001315425757
 s = -1001203491308
-d = -1001203491308
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
-def forward(client, message):
+def forward(client, Message):
  f = False
  words = ['dekho','TRUST','join','fix','😱','😳','👆','👇','☝️','https://','😂','🤔','pass','chase','link','suno','member','❓','loss','audio','open',"report",'paid','contact','baazigar','market','load','whatsapp','book','bhai','🐴','only','chut','tennis','teen','lavde','chutiya','bc','kya','line','LUND','WICKET LU','?','loda','telegram','chor',"kama","lakh",' id','स',"kitna"]
  for word in words:
-  if word.casefold() in message.text.casefold():
+  if word.casefold() in Message.text.casefold():
    return
- mes = client.send_message(d,message.text.markdown) 
+ mes = client.send_message(d,Message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("","").markdown) 
  files = open("sure.txt" , "a")
- files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
+ files.write(" " + str(Message.message_id) +  " " + str(mes.message_id))
  files.close()  
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
 def forward(client, message):
