@@ -1,9 +1,9 @@
 from pyrogram import Client, Filters,Emoji
 from pyrogram.errors import FloodWait
 import time
-app = Client("mnnnnnnn",488556,"c722b7aadbf8b72109b2f96f30974c6d")
-s = -1001203491308
-d = -1001315425757
+app = Client("nnn",488556,"c722b7aadbf8b72109b2f96f30974c6d")
+s = -1001262096355
+d = -1001378725482
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client,Message):
  f = False
@@ -12,7 +12,7 @@ def forward(client,Message):
   if word.casefold() in Message.text.casefold():
    f = True
  if not f:
-  mes = client.send_message(d,Message.text.markdown) 
+  mes = client.send_message(d, Message.text.markdown.replace("🖲","💘").replace("📟","🏝").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
   files = open("sure.txt" , "a")
   files.write(" " + str(Message.message_id) +  " " + str(mes.message_id))
   files.close()  
