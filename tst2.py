@@ -11,7 +11,7 @@ def forward(client, Message):
  for word in words:
   if word.casefold() in Message.text.casefold():
    return
- mes = client.send_message(d,Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("a","b")) 
+ mes = client.send_message(d,Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
  files = open("sure.txt" , "a")
  files.write(" " + str(Message.message_id) +  " " + str(mes.message_id))
  files.close()  
