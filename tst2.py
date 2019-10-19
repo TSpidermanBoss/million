@@ -12,12 +12,12 @@ def forward(client,Message):
   if word.casefold() in Message.text.casefold():
    f = True
  if not f:
-  if "🎾" in message.text:
-   mes = client.send_message(d,' '.join(message.text..markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶").split("🎾")[:-1]) + "🎾")
+  if "🎾" in Message.text:
+   mes = client.send_message(d,' '.join(Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶").split("🎾")[:-1]) + "🎾")
   else:
    mes = client.send_message(d, Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
   files = open("sure.txt" , "a")
-  files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
+  files.write(" " + str(Message.message_id) +  " " + str(mes.message_id))
   files.close()
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
 def forward(client,Message):
