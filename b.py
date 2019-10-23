@@ -1,9 +1,9 @@
 from pyrogram import Client, Filters,Emoji
 from pyrogram.errors import FloodWait
 import time
-app = Client("baaz",869912,"a7b049e08df35464047d57e5134327e5")
-s = -1001146486274
-d = -1001378725482
+app = Client("my_acc",854941,"bf9632f82af99dc8c3b934ab48d54780")
+s = -1001262096355
+d = -1001316388816
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client,Message):
  f = False
@@ -13,9 +13,9 @@ def forward(client,Message):
    f = True
  if not f:
   if "🎾" in Message.text:
-   mes = client.send_message(d,"<b>" + ' '.join(Message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶").split("🎾")[:-1]) + "🎾" + "</b>",parse_mode= "html")
+   mes = client.send_message(d,"<b>" + ' '.join(Message.text.replace("🖲","🇨🇭").replace("📟","📮").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶").split("🎾")[:-1]) + "🎾" + "</b>",parse_mode= "html")
   else:
-   mes = client.send_message(d, Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
+   mes = client.send_message(d, Message.text.markdown.replace("🖲","🇨🇭").replace("📟","📮").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
   files = open("sure.txt" , "a")
   files.write(" " + str(Message.message_id) +  " " + str(mes.message_id))
   files.close()
@@ -30,9 +30,9 @@ def forward(client,Message):
   if id in x:
    try:
     if "🎾" in Message.text:
-     client.edit_message_text(d,int(x[x.index(id)+1]),"<b>" + ' '.join(Message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶").split("🎾")[:-1]) + "</b>" + "🎾",parse_mode="html")
+     client.edit_message_text(d,int(x[x.index(id)+1]),"<b>" + ' '.join(Message.text.replace("🖲","🇨🇭").replace("📟","📮").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶").split("🎾")[:-1]) + "</b>" + "🎾",parse_mode="html")
     else:
-     client.edit_message_text(d,int(x[x.index(id)+1]),Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
+     client.edit_message_text(d,int(x[x.index(id)+1]),Message.text.markdown.replace("🖲","🇨🇭").replace("📟","📮").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
    except FloodWait as e:
     time.sleep(e.x)
 @app.on_deleted_messages(Filters.chat(s))
