@@ -28,7 +28,6 @@ def forward(client,Message):
  file = open("sure.txt" , "r")
  lines = file.readlines()
  file.close()
- print(str(lines).split(" ")[1])
  for line in lines:
   x = line.split()
   id = str(Message.message_id)
