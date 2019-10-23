@@ -10,7 +10,6 @@ def forward(client,Message):
  file = open("sure.txt" , "r")
  lines = file.readlines()
  file.close()
- del lines[:2]
  for n in lines:
   print(n)
   li = open("sure.txt","a")
