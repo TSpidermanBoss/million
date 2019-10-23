@@ -11,8 +11,9 @@ def forward(client,Message):
  lines = file.readlines()
  file.close()
  del lines[:2]
- print(lines)
- for n in lines:
+ y = " ".join(str(x) for x in lines)
+ print(y)
+ for n in y:
   li = open("sure.txt","w")
   li.write(n + " " + str(Message.message_id) + " " + str(mes.message_id))
   li.close()
