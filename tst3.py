@@ -13,7 +13,7 @@ def forward(client,Message):
  print(lines)
  for n in lines:
   print(n)
-  li = open("sure.txt","a")
+  li = open("sure.txt","w")
   li.write(n + " " + str(Message.message_id) + " " + str(mes.message_id))
   li.close()
   
