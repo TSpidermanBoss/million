@@ -20,8 +20,8 @@ def forward(client,Message):
   lines = file.readlines()
   file.close()
   del lines[:2]
-  for d in lines:
-    print(d)
+  for n in lines:
+    print(n)
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
 def forward(client,Message):
  file = open("sure.txt" , "r")
