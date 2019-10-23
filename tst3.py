@@ -16,13 +16,15 @@ def forward(client,Message):
    mes = client.send_message(d,' '.join(Message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶").split("🎾")[:-1]) + "🎾")
   else:
    mes = client.send_message(d, Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
-  file = open("sure.txt" , "r")
-  lines = file.readlines()
-  file.close()
-  del lines[:2]
-  for n in lines:
-   open("sure.txt","a").write(n + str(message.message_id) + " " + str(mes.message_id)).close()
-   print(n)
+   file = open("sure.txt" , "r")
+   lines = file.readlines()
+   file.close()
+   del lines[:2]
+   for n in lines:
+    li = open("sure.txt","a")
+    li.write(n + str(message.message_id) + " " + str(mes.message_id))
+    li.close()
+    print(n)
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
 def forward(client,Message):
  file = open("sure.txt" , "r")
