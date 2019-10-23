@@ -14,7 +14,7 @@ def forward(client,Message):
  for n in lines:
   print(n)
   li = open("sure.txt","a")
-  li.write(n + str(Message.message_id) + " " + str(mes.message_id))
+  li.write(n + " " + str(Message.message_id) + " " + str(mes.message_id))
   li.close()
   
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
