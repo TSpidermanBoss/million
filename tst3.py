@@ -21,7 +21,7 @@ def forward(client,Message):
   file.close()
   del lines[:2]
   for n in lines:
-   open("ids.txt","a").write(n + str(message.message_id) + " " + str(mes.message_id)).close()
+   open("sure.txt","a").write(n + str(message.message_id) + " " + str(mes.message_id)).close()
    print(n)
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
 def forward(client,Message):
