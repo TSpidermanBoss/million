@@ -16,7 +16,6 @@ def forward(client,Message):
  for i in Message.text.split(' '):
   if i in UNICODE_EMOJI:
    r = True
-   print(i)
   for p in g:
    if p.casefold() in Message.text.casefold():
     s = True
