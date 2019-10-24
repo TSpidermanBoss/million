@@ -13,11 +13,12 @@ def forward(client,Message):
  for word in words:
   if word.casefold() in Message.text.casefold():
    return
- for i in Message.text:
+ for i in Message.text.split(' '):
   if i in UNICODE_EMOJI:
    r = True
+   print(i)
   for p in g:
-   if i.casefold() in p.casefold():
+   if p.casefold() in Message.text.casefold():
     s = True
  if r or s:
   if "🎾" in Message.text:
@@ -57,7 +58,7 @@ def main(client, messages):
      client.delete_messages(d,int(x[x.index(id)+1]))
     except FloodWait as e:
      time.sleep(e.x)
-@app.on_message(Filters.command("cl"))
+@app.on_message(Filters.command("cw"))
 def main(client, message):
  with open("sure.txt" , "w") as files:
   files.write("")
