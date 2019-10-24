@@ -20,7 +20,7 @@ def forward(client,Message):
     z = True
    if w in g:
     v = True
-  if v and z:
+  if v or z:
    mes = client.send_message(d, Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
    with open("sure.txt", "r") as f:
     x = f.readlines()
