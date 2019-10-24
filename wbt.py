@@ -5,7 +5,7 @@ from emoji import UNICODE_EMOJI
 app = Client("mnnnnnnn",488556,"c722b7aadbf8b72109b2f96f30974c6d")
 s = -1001146486274
 d = -1001378725482
-g = ["0","1","2","3","4","6","NEED","RUN","CATCH","DROP","BALL","HAWA","WD","WIDE","NB","PLAYING","OVER","WON","WIN","START","STOP","ME","+","XI","✔️","GANA",GAANA","TIE","WKT","WICKET","☄️"]
+g = ["0","1","2","3","4","6","NEED","RUN","CATCH","DROP","BALL","HAWA","WD","WIDE","NB","PLAYING","OVER","WON","WIN","START","STOP","ME","+","XI","✔️","GANA","GAANA","TIE","WKT","WICKET","☄️"]
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client,Message):
  r = s = False
