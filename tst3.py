@@ -14,10 +14,9 @@ def forward(client,Message):
  del y[:2]
  y = " ".join(str(x) for x in y)
  print(y)
- for n in y:
-  li = open("sure.txt","w")
-  li.write(n + " " + str(Message.message_id) + " " + str(mes.message_id))
-  li.close()
+ li = open("sure.txt","w")
+ li.write(y + " " + str(Message.message_id) + " " + str(mes.message_id))
+ li.close()
   
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
 def forward(client,Message):
