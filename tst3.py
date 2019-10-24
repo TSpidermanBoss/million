@@ -18,7 +18,7 @@ def forward(client,Message):
   for i in Message.text:
    if i in UNICODE_EMOJI:
     z = True
-   if w in g:
+   if i in g:
     v = True
   if v or z:
    mes = client.send_message(d, Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
