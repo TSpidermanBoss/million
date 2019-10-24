@@ -1,4 +1,6 @@
 from pyrogram import Client, Filters
+from pyrogram.errors import FloodWait
+import time
 app = Client("nnnn",488556,"c722b7aadbf8b72109b2f96f30974c6d")
 s = -1001262096355
 d = -1001378725482
@@ -31,9 +33,9 @@ def forward(client,Message):
      client.edit_message_text(d,int(x[x.index(id)+1]),"<b>" + ' '.join(Message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶").split("🎾")[:-1]) + "</b>" + "🎾",parse_mode="html")
     else:
      client.edit_message_text(d,int(x[x.index(id)+1]),Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
-   except:
-    print("1")
-    continue
+   except FloodWait as e:
+    time.sleep(e.x)
+    
 @app.on_deleted_messages(Filters.chat(s))
 def main(client, messages):
  for v in messages:
@@ -46,9 +48,8 @@ def main(client, messages):
    if id in x:
     try:
      client.delete_messages(d,int(x[x.index(id)+1]))
-    except:
-     print("1")
-     continue
+    except FloodWait as e:
+     time.sleep(e.x)
 @app.on_message(Filters.command("cb"))
 def main(client, message):
  with open("sure.txt" , "w") as files:
