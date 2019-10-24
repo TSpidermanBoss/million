@@ -11,11 +11,11 @@ def forward(client,Message):
  x = file.readlines()
  file.close()
  y = [j for j in x[0].split(" ")]
- del y[:2]
+ del y[2:]
  y = " ".join(str(x) for x in y)
  print(y)
  li = open("sure.txt","w")
- li.write(y + " " + str(Message.message_id) + " " + str(mes.message_id))
+ li.write(str(Message.message_id) + " " + str(mes.message_id) + " " + y)
  li.close()
   
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
