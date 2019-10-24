@@ -1,8 +1,8 @@
 from pyrogram import Client, Filters,Emoji
 from pyrogram.errors import FloodWait
 import time
-app = Client("mnnnnnnn",488556,"c722b7aadbf8b72109b2f96f30974c6d")
-s = -1001146486274
+app = Client("nnnn",488556,"c722b7aadbf8b72109b2f96f30974c6d")
+s = -1001262096355
 d = -1001378725482
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client,Message):
@@ -54,7 +54,7 @@ def main(client, messages):
      client.delete_messages(d,int(x[x.index(id)+1]))
     except FloodWait as e:
      time.sleep(e.x)
-@app.on_message(Filters.command("c"))
+@app.on_message(Filters.command("cb"))
 def main(client, message):
  with open("sure.txt" , "w") as files:
   files.write("000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000")
