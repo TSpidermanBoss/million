@@ -5,13 +5,13 @@ from emoji import UNICODE_EMOJI
 app = Client(session_name="llx",api_id=814511,api_hash="44462f0f278503255d5cc30941b617a9",bot_token ="765108996:AAGYA2lsT6yw1q5SEx1PXesPWYdwb8RBivc")
 d = -1001315425757
 s = -1001203491308
+g = ["1","2","3","4","6","NEED","RUN","CATCH",DROP","BALL","HAWA","WD","WIDE","NB","PLAYING","OVER","WON","WIN"]
 
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client,Message):
  z = False
  for i in Message.text:
-  if i in UNICODE_EMOJI:
-   print(UNICODE_EMOJI)
+  if i.casefold() in UNICODE_EMOJI or i in g.casefold():
    z = True
  if z:
   mes = client.send_message(d, Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
