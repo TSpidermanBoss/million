@@ -13,7 +13,6 @@ def forward(client,Message):
  y = [j for j in x[0].split(" ")]
  del y[:2]
  y = " ".join(str(x) for x in y)
- print(y + " " +str(Message.message_id) + " " + str(mes.message_id))
  li = open("sure.txt","w")
  li.write(y + " " +str(Message.message_id) + " " + str(mes.message_id))
  li.close()
@@ -34,7 +33,7 @@ def forward(client,Message):
 @app.on_message(Filters.command("c"))
 def main(client, message):
  with open("sure.txt" , "w") as files:
-  files.write("553 433 553 433 677 366 932 553 433 677 366 932 553 433 677 366 932 553 553 433 677 366 932 553 433 677 366 932 433 677 366 932 677 553 433 677 366 932 366 932 553 433 677 366 932")
+  files.write("000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000")
   files.close()
   message.reply("Done") 
 app.run()
