@@ -1,20 +1,28 @@
 from pyrogram import Client, Filters,Emoji
 from pyrogram.errors import FloodWait
 import time
+from emoji import UNICODE_EMOJI
 app = Client(session_name="llx",api_id=814511,api_hash="44462f0f278503255d5cc30941b617a9",bot_token ="765108996:AAGYA2lsT6yw1q5SEx1PXesPWYdwb8RBivc")
 d = -1001315425757
 s = -1001203491308
+
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client,Message):
- mes = client.send_message(d, Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
- with open("sure.txt", "r") as f:
-  x = f.readlines()
- y = [j for j in x[0].split(" ")]
- del y[:2]
- y = " ".join(str(x) for x in y)
- o = open("sure.txt","w")
- o.write(y + " " +str(Message.message_id) + " " + str(mes.message_id))
- o.close()  
+ z = False
+ for i in message.text:
+  if i in UNICODE_EMOJI:
+   z = True
+ if z:
+  mes = client.send_message(d, Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
+  with open("sure.txt", "r") as f:
+   x = f.readlines()
+  y = [j for j in x[0].split(" ")]
+  del y[:2]
+  y = " ".join(str(x) for x in y)
+  o = open("sure.txt","w")
+  o.write(y + " " +str(Message.message_id) + " " + str(mes.message_id))
+  o.close()
+
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
 def forward(client,Message):
  file = open("sure.txt" , "r")
