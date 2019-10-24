@@ -17,6 +17,7 @@ def forward(client,Message):
   if i in UNICODE_EMOJI:
    r = True
   for p in g:
+   print( "p wala" + p)
    if i.casefold() in p.casefold():
     s = True
  if r or s:
