@@ -2,7 +2,7 @@ from pyrogram import Client, Filters,Emoji
 from pyrogram.errors import FloodWait
 import time
 from emoji import UNICODE_EMOJI
-app = Client("nnnn",488556,"c722b7aadbf8b72109b2f96f30974c6d")
+app = Client("mnnnnnnn",488556,"c722b7aadbf8b72109b2f96f30974c6d")
 s = -1001146486274
 d = -1001378725482
 g = ["0","1","2","3","4","6","NEED","RUN","CATCH","DROP","BALL","HAWA","WD","WIDE","NB","PLAYING","OVER","WON","WIN","START","STOP","ME","+","XI"]
