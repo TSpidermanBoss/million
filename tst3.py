@@ -7,7 +7,8 @@ s = -1001203491308
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client,Message):
  mes = client.send_message(d, Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
- x = open("sure.txt" , "r").readlines().close()
+ with open("sure txt", "r") as f:
+  x = f.readlines()
  y = [j for j in x[0].split(" ")]
  del y[:2]
  print(y)
