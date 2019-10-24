@@ -57,7 +57,7 @@ def main(client, messages):
      client.delete_messages(d,int(x[x.index(id)+1]))
     except FloodWait as e:
      time.sleep(e.x)
-@app.on_message(Filters.command("cl"))
+@app.on_message(Filters.command("cw"))
 def main(client, message):
  with open("sure.txt" , "w") as files:
   files.write("")
