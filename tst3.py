@@ -6,7 +6,7 @@ app = Client(session_name="llx",api_id=814511,api_hash="44462f0f278503255d5cc309
 d = -1001315425757
 s = -1001203491308
 g = ["1","2","3","4","6","NEED","RUN","CATCH","DROP","BALL","HAWA","WD","WIDE","NB","PLAYING","OVER","WON","WIN"]
-b = g + UNICODE_EMOJI
+b = g + [UNICODE_EMOJI]
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client,Message):
  z = False
