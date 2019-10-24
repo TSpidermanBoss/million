@@ -9,14 +9,12 @@ g = ["1","2","3","4","6","NEED","RUN","CATCH","DROP","BALL","HAWA","WD","WIDE","
 
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client,Message):
- f = False
+ v = z = f = False
  words = ['dekho','TRUST','join','fix','😱','😳','👆','👇','☝️','https://','😂','🤔','pass','chase','link','suno','member','❓','loss','audio','open',"report",'paid','contact','baazigar','market','load','whatsapp','book','bhai','🐴','only','chut','tennis','teen','lavde','chutiya','bc','kya','line','LUND','WICKET LU','?','loda','telegram','chor',"kama","lakh",' id','स',"kitna"]
  for word in words:
   if word.casefold() in Message.text.casefold():
    f = True
  if not f:
-  z = False
-  v = False
   for i in Message.text:
    if i in UNICODE_EMOJI:
     z = True
