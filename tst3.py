@@ -12,6 +12,7 @@ def forward(client,Message):
  file.close()
  y = [j for j in x[0].split(" ")]
  del y[:2]
+ y = " ".join(str(x) for x in lines)
  print(y)
  for n in y:
   li = open("sure.txt","w")
