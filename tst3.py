@@ -18,9 +18,8 @@ def forward(client,Message):
    r = True
    print(i)
   for p in g:
-   if i.casefold() in p.casefold():
+   if p.casefold() in Message.text.casefold():
     s = True
-    print(i + " " +p + " s")
  if r or s:
   if "🎾" in Message.text:
    mes = client.send_message(d,"<b>" + ' '.join(Message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶").split("🎾")[:-1]) + "🎾" + "</b>",parse_mode= "html")
