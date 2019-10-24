@@ -17,10 +17,11 @@ def forward(client,Message):
   if i in UNICODE_EMOJI:
    r = True
   for p in g:
-   print( "p wala" + p)
    if i.casefold() in p.casefold():
     s = True
  if r or s:
+  print(r)
+  print(s)
   if "🎾" in Message.text:
    mes = client.send_message(d,"<b>" + ' '.join(Message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶").split("🎾")[:-1]) + "🎾" + "</b>",parse_mode= "html")
   else:
