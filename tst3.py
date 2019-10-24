@@ -13,7 +13,7 @@ def forward(client,Message):
  for word in words:
   if word.casefold() in Message.text.casefold():
    return
- for i in Message.text:
+ for i in Message.text.split(' '):
   print(i)
   if i in UNICODE_EMOJI:
    r = True
