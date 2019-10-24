@@ -34,7 +34,7 @@ def forward(client,Message):
 @app.on_message(Filters.command("c"))
 def main(client, message):
  with open("sure.txt" , "w") as files:
-  files.write("")
+  files.write("553 433 553 433 677 366 932 553 433 677 366 932 553 433 677 366 932 553 553 433 677 366 932 553 433 677 366 932 433 677 366 932 677 553 433 677 366 932 366 932 553 433 677 366 932")
   files.close()
   message.reply("Done") 
 app.run()
