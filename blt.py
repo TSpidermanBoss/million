@@ -11,13 +11,13 @@ def forward(client,Message):
  for word in words:
   if word.casefold() in Message.text.casefold():
     return
-  if "🎾" in Message.text:
-   mes = client.send_message(d,"<b>" + ' '.join(Message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶").split("🎾")[:-1]) + "🎾" + "</b>",parse_mode= "html")
-  else:
+ if "🎾" in Message.text:
+  mes = client.send_message(d,"<b>" + ' '.join(Message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶").split("🎾")[:-1]) + "🎾" + "</b>",parse_mode= "html")
+ else:
    mes = client.send_message(d, Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
-  files = open("sure.txt" , "a")
-  files.write(" " + str(Message.message_id) +  " " + str(mes.message_id))
-  files.close()  
+ files = open("sure.txt" , "a")
+ files.write(" " + str(Message.message_id) +  " " + str(mes.message_id))
+ files.close()  
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
 def forward(client,Message):
  file = open("sure.txt" , "r")
