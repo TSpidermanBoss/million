@@ -21,8 +21,7 @@ def forward(client,Message):
   y = [j for j in x[0].split(" ")]
   del y[:2]
   y = " ".join(str(x) for x in y)
-  open("sure.txt","w").write(y + " " +str(Message.message_id) + " " + str(mes.message_id)).close()
-  
+  open("sure.txt","w").write(y + " " +str(Message.message_id) + " " + str(mes.message_id)).close() 
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
 def forward(client,Message):
  file = open("sure.txt" , "r")
