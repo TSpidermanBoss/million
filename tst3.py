@@ -11,7 +11,7 @@ g = ["1","2","3","4","6","NEED","RUN","CATCH","DROP","BALL","HAWA","WD","WIDE","
 def forward(client,Message):
  z = False
  for i in Message.text:
-  if i.casefold() in UNICODE_EMOJI or i in g.casefold():
+  if i in UNICODE_EMOJI:
    z = True
  if z:
   mes = client.send_message(d, Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
