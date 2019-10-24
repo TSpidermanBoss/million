@@ -7,15 +7,13 @@ s = -1001203491308
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client,Message):
  mes = client.send_message(d, Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
- file = open("sure.txt" , "r")
- x = file.readlines()
- file.close()
+ x = open("sure.txt" , "r").readlines().close()
  y = [j for j in x[0].split(" ")]
  del y[:2]
+ print(y)
  y = " ".join(str(x) for x in y)
- li = open("sure.txt","w")
- li.write(y + " " +str(Message.message_id) + " " + str(mes.message_id))
- li.close()
+ open("sure.txt","w").write(y + " " +str(Message.message_id) + " " + str(mes.message_id)).close()
+  
   
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
 def forward(client,Message):
