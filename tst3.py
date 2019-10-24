@@ -6,23 +6,34 @@ app = Client(session_name="llx",api_id=814511,api_hash="44462f0f278503255d5cc309
 d = -1001315425757
 s = -1001203491308
 g = ["1","2","3","4","6","NEED","RUN","CATCH","DROP","BALL","HAWA","WD","WIDE","NB","PLAYING","OVER","WON","WIN"]
-b = g + [UNICODE_EMOJI]
+
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client,Message):
- z = False
- for i in Message.text:
-  if i in b:
-   z = True
- if z:
-  mes = client.send_message(d, Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
-  with open("sure.txt", "r") as f:
-   x = f.readlines()
-  y = [j for j in x[0].split(" ")]
-  del y[:2]
-  y = " ".join(str(x) for x in y)
-  o = open("sure.txt","w")
-  o.write(y + " " +str(Message.message_id) + " " + str(mes.message_id))
-  o.close()
+ f = False
+ words = ['dekho','TRUST','join','fix','😱','😳','👆','👇','☝️','https://','😂','🤔','pass','chase','link','suno','member','❓','loss','audio','open',"report",'paid','contact','baazigar','market','load','whatsapp','book','bhai','🐴','only','chut','tennis','teen','lavde','chutiya','bc','kya','line','LUND','WICKET LU','?','loda','telegram','chor',"kama","lakh",' id','स',"kitna"]
+ for word in words:
+  if word.casefold() in Message.text.casefold():
+   f = True
+ if not f:
+  z = False
+  v = False
+  for i in Message.text:
+   if i in UNICODE_EMOJI:
+    z = True
+  if z:
+  for w in Message.text:
+   if w in g:
+    v = True
+  if v:
+   mes = client.send_message(d, Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
+   with open("sure.txt", "r") as f:
+    x = f.readlines()
+   y = [j for j in x[0].split(" ")]
+   del y[:2]
+   y = " ".join(str(x) for x in y)
+   o = open("sure.txt","w")
+   o.write(y + " " +str(Message.message_id) + " " + str(mes.message_id))
+   o.close()
 
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
 def forward(client,Message):
