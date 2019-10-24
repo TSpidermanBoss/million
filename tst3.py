@@ -9,7 +9,7 @@ s = -1001203491308
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client,Message):
  z = False
- for i in message.text:
+ for i in Message.text:
   if i in UNICODE_EMOJI:
    z = True
  if z:
