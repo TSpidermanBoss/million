@@ -13,12 +13,18 @@ def forward(client,Message):
    f = True
  if not f:
   if "🎾" in Message.text:
-   mes = client.send_message(d,"<b>" + ' '.join(Message.text.replace("🖲","🇨🇭").replace("📟","📮").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶").split("🎾")[:-1]) + "🎾" + "</b>",parse_mode= "html")
+   mes = client.send_message(d,"<b>" + ' '.join(Message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶").split("🎾")[:-1]) + "🎾" + "</b>",parse_mode= "html")
   else:
-   mes = client.send_message(d, Message.text.markdown.replace("🖲","🇨🇭").replace("📟","📮").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
-  files = open("sure.txt" , "a")
-  files.write(" " + str(Message.message_id) +  " " + str(mes.message_id))
-  files.close()
+   mes = client.send_message(d, Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
+  file = open("sure.txt" , "r")
+  x = file.readlines()
+  file.close()
+  y = [j for j in x[0].split(" ")]
+  del y[:2]
+  y = " ".join(str(x) for x in y)
+  li = open("sure.txt","w")
+  li.write(y + " " +str(Message.message_id) + " " + str(mes.message_id))
+  li.close()
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
 def forward(client,Message):
  file = open("sure.txt" , "r")
@@ -30,9 +36,9 @@ def forward(client,Message):
   if id in x:
    try:
     if "🎾" in Message.text:
-     client.edit_message_text(d,int(x[x.index(id)+1]),"<b>" + ' '.join(Message.text.replace("🖲","🇨🇭").replace("📟","📮").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶").split("🎾")[:-1]) + "</b>" + "🎾",parse_mode="html")
+     client.edit_message_text(d,int(x[x.index(id)+1]),"<b>" + ' '.join(Message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶").split("🎾")[:-1]) + "</b>" + "🎾",parse_mode="html")
     else:
-     client.edit_message_text(d,int(x[x.index(id)+1]),Message.text.markdown.replace("🖲","🇨🇭").replace("📟","📮").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
+     client.edit_message_text(d,int(x[x.index(id)+1]),Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
    except FloodWait as e:
     time.sleep(e.x)
 @app.on_deleted_messages(Filters.chat(s))
@@ -52,7 +58,7 @@ def main(client, messages):
 @app.on_message(Filters.command("c"))
 def main(client, message):
  with open("sure.txt" , "w") as files:
-  files.write("")
+  files.write("000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000 000")
   files.close()
   message.reply("Done") 
 app.run()
