@@ -18,12 +18,18 @@ async def main():
  def forward(client,Message):
   if not Message.message_id in msg_ids:
       return
-  client.edit_message_text(d,msg_ids[Message.message_id],Message.text.markdown)
+  try:
+   if Message.text == ".":
+    Message.delete(msg_ids[Message.message_id])
+   else:
+    client.edit_text(d,msg_ids[Message.message_id],Message.text.markdown)
+  except FloodWait as e:
+   time.sleep(e.x)
   @app.on_deleted_messages(Filters.chat(s))
   def main(client, messages):
    if not Message.message_id in msg_ids:
     return
-   client.delete_messages(d,msg_ids[Message.message_id])
+   Message.delete(d,msg_ids[Message.message_id])
  app.run()
 loop = asyncio.get_event_loop()
 loop.run_until_complete(main())
