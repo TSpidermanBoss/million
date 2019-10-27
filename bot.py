@@ -17,6 +17,7 @@ async def main():
   msg_ids[Message.message_id] = z
  @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
  def forward(client,Message):
+  print(msg_ids)
   if not Message.message_id in msg_ids:
    return
   try:
