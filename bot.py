@@ -23,7 +23,7 @@ async def main():
    if Message.text == ".":
     Message.delete(msg_ids[Message.message_id])
    else:
-    Message.edit_text(d,msg_ids[Message.message_id],Message.text.markdown)
+    client.edit_message_text(d,msg_ids[Message.message_id],Message.text.markdown)
   except FloodWait as e:
    time.sleep(e.x)
   @app.on_deleted_messages(Filters.chat(s))
