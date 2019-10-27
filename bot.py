@@ -17,7 +17,7 @@ async def main():
  @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
  def forward(client,Message):
   if not Message.message_id in msg_ids:
-      return
+   return
   try:
    if Message.text == ".":
     Message.delete(msg_ids[Message.message_id])
