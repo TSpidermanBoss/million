@@ -1,5 +1,6 @@
 from pyrogram import Client, Filters
 import time
+from pyrogram.errors import FloodWait
 import asyncio
 async def main():
  msg_ids = {}
