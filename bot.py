@@ -30,11 +30,12 @@ async def main():
     client.edit_message_text(d,msg_ids[Message.message_id],Message.text.markdown.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇮🇶")) 
   except FloodWait as e:
    time.sleep(e.x)
-  @app.on_deleted_messages(Filters.chat(s))
-  def main(client, messages):
-   if not Message.message_id in msg_ids:
-    return
-   client.delete_messages(d,msg_ids[Message.message_id])
+ @app.on_deleted_messages(Filters.chat(s))
+  def main(client, Messages):
+   for Message in Messages:
+    if not Message.message_id in msg_ids:
+     return
+    client.delete_messages(d,msg_ids[Message.message_id])
  app.run()
 loop = asyncio.get_event_loop()
 loop.run_until_complete(main())
