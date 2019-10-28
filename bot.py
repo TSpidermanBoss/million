@@ -5,8 +5,8 @@ import asyncio
 async def main():
  msg_ids = {}
  app = Client("mnnn",768402,"f6420bf67303614279049d48d3e670f6")
- d = int(input("Destination Chat : "))
- s = int(input("Source Chat : "))
+ d = -1001378725482
+ s = -1001153640657
  @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
  def forward(client,Message):
   words = ['dekho','TRUST','join','fix','😱','😳','👆','👇','☝️','https://','😂','🤔','pass','chase','link','suno','member','❓','loss','audio','open',"report",'paid','contact','baazigar','market','load','whatsapp','book','bhai','🐴','only','chut','tennis','teen','lavde','chutiya','bc','kya','LUND','WICKET LU','?','loda','telegram','chor',"kama","lakh",' id','स',"kitna"]
