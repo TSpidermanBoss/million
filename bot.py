@@ -31,7 +31,7 @@ async def main():
   except FloodWait as e:
    time.sleep(e.x)
  @app.on_deleted_messages(Filters.chat(s))
-  def main(client, Messages):
+ def main(client, Messages):
    for Message in Messages:
     if not Message.message_id in msg_ids:
      return
