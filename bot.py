@@ -4,7 +4,7 @@ from pyrogram.errors import FloodWait
 import asyncio
 async def main():
  msg_ids = {}
- app = Client("mnnn",768402,"f6420bf67303614279049d48d3e670f6")
+ app = Client(session_name="llx",api_id=814511,api_hash="44462f0f278503255d5cc30941b617a9",bot_token ="765108996:AAGYA2lsT6yw1q5SEx1PXesPWYdwb8RBivc")
  d = -1001378725482
  s = -1001153640657
  @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
