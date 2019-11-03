@@ -4,8 +4,8 @@ from pyrogram.errors import FloodWait
 import asyncio
 async def main():
  msg_ids = {}
- app = Client("mnnnnn",488556,"c722b7aadbf8b72109b2f96f30974c6d") 
- d = -1001323797697
+ app = Client("session",771202,"28eed966b0cd4238a4f4f8f0ab4c9c72") 
+ d = -1001333049532
  s = -1001262096355
  @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
  def forward(client,Message):
