@@ -13,20 +13,14 @@ async def main():
   for word in words:
    if word.casefold() in Message.text.casefold():
      return 
-  if "🎾" in Message.text:
-   z = client.send_message(d,"<b>" + ' '.join(Message.text.replace("🖲","💘").replace("📟","🏝").replace("🇩🇪","🇮🇶").replace("🇦🇲","🇳🇱").split("🎾")[:-1]) + "🥎" + "</b>",parse_mode= "html").message_id
-  else:
-   z = client.send_message(d, Message.text.markdown.replace("🖲","💘").replace("📟","🏝").replace("🇩🇪","🇳🇱").replace("🇦🇲","🇳🇱")).message_id
+  z = client.send_message(d, Message.text.markdown).message_id
   msg_ids[Message.message_id] = z
  @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
  def forward(client,Message):
   if not Message.message_id in msg_ids:
    return
   try:
-   if "🎾" in Message.text:
-    client.edit_message_text(d,msg_ids[Message.message_id],"<b>" + ' '.join(Message.text.replace("🖲","💘").replace("📟","🏝").replace("🇩🇪","🇳🇱").replace("🇦🇲","🇳🇱").split("🎾")[:-1]) + "</b>" + "🥎",parse_mode="html")
-   else:
-    client.edit_message_text(d,msg_ids[Message.message_id],Message.text.markdown.replace("🖲","💘").replace("📟","🏝").replace("🇩🇪","🇳🇱").replace("🇦🇲","🇳🇱").replace("Live","Bullet") ) 
+   client.edit_message_text(d,msg_ids[Message.message_id],Message.text.markdown) 
   except FloodWait as e:
    time.sleep(e.x)
  @app.on_deleted_messages(Filters.chat(s))
