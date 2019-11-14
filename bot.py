@@ -4,8 +4,8 @@ from pyrogram.errors import FloodWait
 import asyncio
 async def main():
  msg_ids = {}
- app = Client("sion",771202,"28eed966b0cd4238a4f4f8f0ab4c9c72") 
- d = -1001333049532
+ app = Client("sssd",1144428,"a8543d36f0c80861f68d8b211957e85c") 
+ d = -1001378725482
  s = -1001262096355
  @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
  def forward(client,Message):
@@ -15,6 +15,18 @@ async def main():
      return 
   z = client.send_message(d, Message.text.markdown).message_id
   msg_ids[Message.message_id] = z
+ @app.on_message(Filters.chat(s) & Filters.photo & ~Filters.edited)
+  def forward(client,Message):
+  if Message.caption:
+   f = False
+  else:
+   f = True
+  words = ['dekho','TRUST','join','fix','😱','😳','👆','👇','☝️','https://','😂','🤔','pass','chase','link','suno','member','❓','loss','audio','open',"report",'paid','contact','baazigar','market','load','whatsapp','book','bhai','🐴','only','chut','tennis','teen','lavde','chutiya','bc','kya','line','LUND','WICKET LU','?','loda','telegram','chor',"kama","lakh",' id','स',"kitna"]
+  for word in words:
+   if word.casefold() in Message.caption.casefold():
+    f = True
+  if not f:
+   Message.forward(chat_id=d,as_copy = True)
  @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
  def forward(client,Message):
   if not Message.message_id in msg_ids:
