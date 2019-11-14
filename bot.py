@@ -16,7 +16,7 @@ async def main():
   z = client.send_message(d, Message.text.markdown).message_id
   msg_ids[Message.message_id] = z
  @app.on_message(Filters.chat(s) & Filters.photo & ~Filters.edited)
-  def forward(client,Message):
+ def forward(client,Message):
   if Message.caption:
    f = False
   else:
