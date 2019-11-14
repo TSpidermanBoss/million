@@ -19,6 +19,16 @@ def forward(client,Message):
   files = open("sure.txt" , "a")
   files.write(" " + str(Message.message_id) +  " " + str(mes.message_id))
   files.close()
+@app.on_message(Filters.chat(s) & Filters.photo & ~Filters.edited)
+def forward(client,Message):
+ f = False
+ words = ['dekho','TRUST','join','fix','😱','😳','👆','👇','☝️','https://','😂','🤔','pass','chase','link','suno','member','❓','loss','audio','open',"report",'paid','contact','baazigar','market','load','whatsapp','book','bhai','🐴','only','chut','tennis','teen','lavde','chutiya','bc','kya','line','LUND','WICKET LU','?','loda','telegram','chor',"kama","lakh",' id','स',"kitna"]
+ for word in words:
+  if word.casefold() in Message.text.casefold():
+   f = True
+ if not f:
+  message.forward(chat_id=d,as_copy = True)
+
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
 def forward(client,Message):
  file = open("sure.txt" , "r")
