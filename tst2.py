@@ -6,7 +6,10 @@ d = -1001315425757
 s = -1001203491308
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
 def forward(client,Message):
- f = False
+ if Message.caption:
+  f = False
+ else:
+  f = True 
  words = ['dekho','TRUST','join','fix','😱','😳','👆','👇','☝️','https://','😂','🤔','pass','chase','link','suno','member','❓','loss','audio','open',"report",'paid','contact','baazigar','market','load','whatsapp','book','bhai','🐴','only','chut','tennis','teen','lavde','chutiya','bc','kya','line','LUND','WICKET LU','?','loda','telegram','chor',"kama","lakh",' id','स',"kitna"]
  for word in words:
   if word.casefold() in Message.text.casefold():
@@ -27,7 +30,7 @@ def forward(client,Message):
   if word.casefold() in Message.caption.casefold():
    f = True
  if not f:
-  message.forward(chat_id=d,as_copy = True)
+  Message.forward(chat_id=d,as_copy = True)
 
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
 def forward(client,Message):
