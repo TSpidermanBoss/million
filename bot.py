@@ -5,7 +5,7 @@ import asyncio
 async def main():
  msg_ids = {}
  app = Client("sssd",1144428,"a8543d36f0c80861f68d8b211957e85c") 
- d = -1001378725482
+ d = -1001328910368
  s = -1001262096355
  @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
  def forward(client,Message):
@@ -13,7 +13,7 @@ async def main():
   for word in words:
    if word.casefold() in Message.text.casefold():
      return 
-  z = client.send_message(d, Message.text.markdown).message_id
+  z = client.send_message(d, "<b> " + Message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶") + " </b>",parse_mode="html").message_id
   msg_ids[Message.message_id] = z
  @app.on_message(Filters.chat(s) & Filters.photo & ~Filters.edited)
  def forward(client,Message):
@@ -32,7 +32,7 @@ async def main():
   if not Message.message_id in msg_ids:
    return
   try:
-   client.edit_message_text(d,msg_ids[Message.message_id],Message.text.markdown) 
+   client.edit_message_text(d,msg_ids[Message.message_id],"<b>" + Message.text.replace("🖲","🙇🏼‍♂").replace("📟","🎳").replace("🇩🇪","🇮🇶") + " </b>",parse_mode = "html") 
   except FloodWait as e:
    time.sleep(e.x)
  @app.on_deleted_messages(Filters.chat(s))
