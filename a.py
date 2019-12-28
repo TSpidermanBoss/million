@@ -10,14 +10,14 @@ def forward(client,Message):
  for word in words:
   if word.casefold() in Message.text.casefold():
    return 
-  z = client.send_message(d,Message.text.replace("🖲","🇨🇭").replace("📟","🏝").replace("🇩🇪","🇭🇳").markdown).message_id
+  z = client.send_message(d,Message.text.markdown.replace("🖲","🇨🇭").replace("📟","🏝").replace("🇩🇪","🇭🇳")).message_id
   msg_ids[Message.message_id] = z
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
 def forward(client,Message):
  if not Message.message_id in msg_ids:
   return
  try:
-  client.edit_message_text(d,msg_ids[Message.message_id],replace("🖲","🇨🇭").replace("📟","🏝").replace("🇩🇪","🇭🇳").markdown)
+  client.edit_message_text(d,msg_ids[Message.message_id],client.send_message(d,Message.text.markdown.replace("🖲","🇨🇭").replace("📟","🏝").replace("🇩🇪","🇭🇳").markdown)
  except FloodWait as e:
   time.sleep(e.x)
 @app.on_deleted_messages(Filters.chat(s))
