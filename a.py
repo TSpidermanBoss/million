@@ -1,38 +1,29 @@
-from pyrogram import Client, Filters,Emoji
-from pyrogram.errors import FloodWait
+from pyrogram import Client, Filters
 import time
-app = Client("a",728044,"a41ddadc9696482aff94a4b37221574a")
+from pyrogram.errors import FloodWait
+app = Client("122",1160852,"9e5b4b20c3d25f7027b183cb57f917ca")  
+d = -1001333049532
 s = -1001262096355
-d = -1001131471681
 @app.on_message(Filters.chat(s) & Filters.text & ~Filters.edited)
-def forward(client, message):
- f = False
- words = [' id','स','dekho','TRUST','fix','😱','😳','👆','👇','pass','chase','link','suno','loss','audio','open','paid','contact','baazigar','market','load','whatsapp','book','bhai','🐴','🥺','member','only','chut','lund','tennis','teen','lavde','chutiya','☝️','bc','❓','kya','line','https://','😂','🤔','LUND','WICKET LU','?','loda','telegram','chor','join',"kama","lakh","report","kitna"]
+def forward(client,Message):
+ words = ['dekho','TRUST','join','fix','😱','😳','👆','👇','☝️','https://','😂','🤔','pass','chase','link','suno','member','❓','loss','audio','open',"report",'paid','contact','baazigar','market','load','whatsapp','book','bhai','🐴','only','chut','tennis','teen','lavde','chutiya','bc','kya','LUND','WICKET LU','?','loda','telegram','chor',"kama","lakh",' id','स',"kitna"]
  for word in words:
-  if word.casefold() in message.text.casefold():
-   f = True
- if not f:
-  mes = client.send_message(d,message.text)
-  files = open("sure.txt" , "a")
-  files.write(" " + str(message.message_id) +  " " + str(mes.message_id))
-  files.close()  
+  if word.casefold() in Message.text.casefold():
+   return 
+  z = client.send_message(d,Message.text.replace("🖲","🇨🇭").replace("📟","🏝").replace("🇩🇪","🇭🇳").markdown).message_id
+  msg_ids[Message.message_id] = z
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
-def forward(client, message):
- file = open("sure.txt" , "r")
- lines = file.readlines()
- file.close()
- for line in lines:
-  x = line.split()
-  id = str(message.message_id)
-  if id in x:
-   try:
-    client.edit_message_text(d,int(x[x.index(id)+1]),message.text)
-   except FloodWait as e:
-    time.sleep(e.x)
-@app.on_message(Filters.command("c"))
-def main(client, message):
- with open("sure.txt" , "w") as files:
-  files.write("001 002")
-  files.close()
-  message.reply("Cleared") 
+def forward(client,Message):
+ if not Message.message_id in msg_ids:
+  return
+ try:
+  client.edit_message_text(d,msg_ids[Message.message_id],replace("🖲","🇨🇭").replace("📟","🏝").replace("🇩🇪","🇭🇳").markdown)
+ except FloodWait as e:
+  time.sleep(e.x)
+@app.on_deleted_messages(Filters.chat(s))
+def main(client, messages):
+ for Message in messages:
+  if not Message.message_id in msg_ids:
+   return
+  client.delete_messages(d,msg_ids[Message.message_id])
 app.run()
