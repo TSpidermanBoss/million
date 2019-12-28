@@ -10,8 +10,10 @@ def forward(client,Message):
  for word in words:
   if word.casefold() in Message.text.casefold():
    return 
-  z = client.send_message(d,Message.text.markdown.replace("🖲","🇨🇭").replace("📟","🏝").replace("🇩🇪","🇭🇳")).message_id
-  msg_ids[Message.message_id] = z
+ mes = client.send_message(d,Message.text.markdown.replace("🖲","🇨🇭").replace("📟","🏝").replace("🇩🇪","🇭🇳")).message_id
+ files = open("sure.txt" , "a")
+ files.write(" " + str(Message.message_id) +  " " + str(mes.message_id))
+ files.close()  
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
 def forward(client,Message):
  if not Message.message_id in msg_ids:
