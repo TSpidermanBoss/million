@@ -11,7 +11,7 @@ def forward(client,Message):
   if word.casefold() in Message.text.casefold():
    return 
  mes = client.send_message(d,Message.text.markdown.replace("🖲","🇨🇭").replace("📟","🏝").replace("🇩🇪","🇭🇳")).message_id
- files = open("sure.txt" , "a")
+ files = open("sure.txt","a")
  files.write(" " + str(Message.message_id) +  " " + str(mes.message_id))
  files.close()  
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
@@ -30,7 +30,22 @@ def forward(client,Message):
 @app.on_deleted_messages(Filters.chat(s))
 def main(client, messages):
  for Message in messages:
-  if not Message.message_id in msg_ids:
-   return
-  client.delete_messages(d,msg_ids[Message.message_id])
+  for v in messages:
+   file = open("sure.txt" , "r")
+   lines = file.readlines()
+   file.close()
+   for line in lines:
+    x = line.split()
+    id = str(v.message_id )
+    if id in x:
+     try:
+      client.delete_messages(d,int(x[x.index(id)+1]))
+     except FloodWait as e:
+      time.sleep(e.x)
+@app.on_message(Filters.command("cb"))
+def main(client, message):
+ with open("sure.txt" , "w") as files:
+  files.write("")
+  files.close()
+  message.reply("Done")
 app.run()
