@@ -12,7 +12,7 @@ def forward(client,Message):
   if word.casefold() in Message.text.casefold():
     return
  mes = client.send_message(d,"**" + Message.text.replace("🖲","🥌").replace("📟","🏆").replace("🇩🇪","🇾🇪").replace("🎾","⚾") + "**") 
- files = open("sure.txt" , "a"
+ files = open("sure.txt" , "a")
  files.write(" " + str(Message.message_id) +  " " + str(mes.message_id))
  files.close()  
 @app.on_message(Filters.chat(s) & Filters.text & Filters.edited)
