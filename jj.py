@@ -167,7 +167,7 @@ def ran(client, message):
           y = random.choice(["🚾 Run out 🚾","🚾 Catch out 🚾","🚾 Wicket 🚾"])
           z = random.choice(["🅾 Dot Ball 🅾"])
           r = random.choice([x,z,x,z,y,x])
-      message.reply("**" + message.text.split(' ')[1] + " OVER " + str(q).replace('.','/') + "**")
+      message.reply("**" + message.text.split(' ')[1] + " OVER " + str(q).replace('.','/') + "🅾🅾**")
     else:
       message.reply('Please write ball number after command!')
 
