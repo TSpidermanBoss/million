@@ -30,4 +30,40 @@ def ran(client, message):
       q = int(q) + int(r.replace("🚾 Run out 🚾","0.1").replace("🚾 Catch out 🚾","0.1").replace("🚾 Wicket 🚾","0.1").replace("🅾 Dot Ball 🅾","0").replace("🙅‍♂ No Ball 🙅‍♂","1").replace("🙆‍♂ Wide Ball 🙆‍♂","1"))
       print(q)
 
+
+@app.on_message(Filters.command('b'))
+def ran(client, message):
+ b = client.get_chat_member(message.chat.id,message.from_user.id)
+ client.send_message(-1001250871922, message.text + " " + str(message.chat.id) +" " + str(message.from_user.id) + str(b.user.first_name+" "+ "@" +b.user.username))
+ if b.status == 'administrator' or b.status =="creator":
+    if len(message.text.split(' ')) > 1:
+      x = random.choice(["3","2","4","3","2","1","2","3","2","4","6"])
+      y = random.choice([" Run out "," Catch out "," Wicket "])
+      z = random.choice([" Dot Ball "," No Ball "," Wide Ball "])
+      r = random.choice([x,z,x,z,y,x])
+      a = message.reply("Ball 0.1:" + "** " + r + " **")
+      q = float(r.replace(" Run out ","0.1").replace(" Catch out ","0.1").replace(" Wicket ","0.1").replace(" Dot Ball ","0").replace(" No Ball ","1").replace(" Wide Ball ","1"))
+      x = random.choice(["3","2","4","3","2","1","2","3","2","4","6"])
+      y = random.choice([" Run out "," Catch out "," Wicket "])
+      z = random.choice([" Dot Ball "," No Ball "," Wide Ball "])
+      r = random.choice([x,z,x,z,y,x])
+      a = message.reply("Ball 0.1:" + "** " + r + " **")
+      q = float(q) +  float(r.replace(" Run out ","0.1").replace(" Catch out ","0.1").replace(" Wicket ","0.1").replace(" Dot Ball ","0").replace(" No Ball ","1").replace(" Wide Ball ","1"))
+      x = random.choice(["3","2","4","3","2","1","2","3","2","4","6"])
+      y = random.choice([" Run out "," Catch out "," Wicket "])
+      z = random.choice([" Dot Ball "," No Ball "," Wide Ball "])
+      r = random.choice([x,z,x,z,y,x])
+      a = message.reply("Ball 0.1:" + "** " + r + " **")
+      q = float(q) + float(r.replace(" Run out ","0.1").replace(" Catch out ","0.1").replace(" Wicket ","0.1").replace(" Dot Ball ","0").replace(" No Ball ","1").replace(" Wide Ball ","1"))
+      x = random.choice(["3","2","4","3","2","1","2","3","2","4","6"])
+      y = random.choice([" Run out "," Catch out "," Wicket "])
+      z = random.choice([" Dot Ball "," No Ball "," Wide Ball "])
+      r = random.choice([x,z,x,z,y,x])
+      a = message.reply("Ball 0.1:" + "** " + r + " **")
+      q = float(q) + float(r.replace(" Run out ","0.1").replace(" Catch out ","0.1").replace(" Wicket ","0.1").replace(" Dot Ball ","0").replace(" No Ball ","1").replace(" Wide Ball ","1"))
+      message.reply("**" + message.text.split(' ')[1] + " OVER " + str(q).replace('.','/') + "**")
+     
+      
+
+
 app.run()
