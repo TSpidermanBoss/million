@@ -3,7 +3,8 @@ from pyrogram import Client, filters
 s = -1001274887387
 import threading
 
-def send(r, client, message):
+
+def send(r,client,message):
     mes = await client.send_message(int(r),"**" + message.text + "**")
     fie = open(str(r)+".txt","a")
     fie.write(" " + str(message.message_id) + " " + str(mes.message_id))
@@ -14,13 +15,8 @@ async def main(client, message):
  file = open("ferrari.txt","r")
  lines = file.readlines()
  file.close()
- for line in lines:
-  p = line.split()
-  for r in p: 
-    try:
-      mes = await client.send_message(int(r),"**" + message.text + "**")
-    except:
-    	continue
-    fie = open(str(r)+".txt","a")
-    fie.write(" " + str(message.message_id) + " " + str(mes.message_id))
-    fie.close()
+ threads = []
+ for r in lines[0].split():
+  t = threading.Thread(target=send, args=[r,client,message])
+  threads.append(t)
+  t.start()
