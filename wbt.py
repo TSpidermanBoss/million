@@ -64,3 +64,21 @@ def main(client, message):
   files.close()
   message.reply("Done") 
 app.run()
+
+
+ x = int(message.command[1])
+
+ y = int(message.command[2])
+
+ a = int(str(y/100).split('.')[0] + "00")
+
+ b = a + int(str(y/100).split('.')[1]) + 1
+
+ for t in range(x,a,100):
+
+   client.delete_messages(message.chat.id,list(range(t,t+100)))
+
+ for e in list(range(a,b)):
+
+   client.delete_messages(message.chat.id,e)
+
