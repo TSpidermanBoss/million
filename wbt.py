@@ -81,4 +81,4 @@ app.run()
  for e in list(range(a,b)):
 
    client.delete_messages(message.chat.id,e)
-
+https://docs.google.com/spreadsheets/d/1LFRZ2eAFZ53eobP8BF81j_1djKqQ-nRYmToeV0Ev2_k/edit#gid=0
